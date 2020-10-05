@@ -1,0 +1,282 @@
+// ***************** Variables ************************************* //
+$color-primary: #f03a47;
+$color-secondary: #f6f4f3;
+$color-rich-black: #0a0908;
+$color-yellow-orange: #f3a738;
+$color-white: #fff;
+
+$padding-body: 2rem 0;
+
+$font-primary: "Poppins", sans-serif;
+
+// ***************** Mixin ************************************* //
+
+@mixin forAllBoxes {
+  background-color: $color-white;
+  color: $color-primary;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  box-shadow: -0.25rem 0.5rem 0.5rem rgba($color: #000000, $alpha: 0.15);
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+@mixin bigIconBox($bg-color) {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  background-color: $bg-color;
+  padding: 3rem;
+  box-shadow: 0 0.25rem 0.5rem rgba($color: #000000, $alpha: 0.15);
+  border-radius: 0.5rem;
+  transform: translateY(-35%);
+  color: $color-secondary;
+}
+
+@mixin header {
+  width: 100%;
+  padding: 2rem 0;
+  border-bottom: 1px solid $color-primary;
+  display: flex;
+  align-items: center;
+  padding-left: 10rem;
+}
+
+// ***************** Base Reset  ************************************* //
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 1.45;
+  color: $color-primary;
+  background-color: $color-secondary;
+  min-height: 100vh;
+}
+
+// ***************** Header ************************************* //
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  background-color: $color-primary;
+  color: $color-secondary;
+}
+
+// ***************** Main ************************************* //
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  margin-top: 5rem;
+
+  &__container {
+    width: 60%;
+    height: 50rem;
+  }
+}
+
+.addItem {
+  @include forAllBoxes();
+
+  &__header {
+    @include header();
+  }
+
+  &__icon-box {
+    &--header {
+      @include bigIconBox($color-primary);
+    }
+
+    &--body {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.15);
+      background-color: $color-primary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    &--active {
+      box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+
+  &__icon {
+    &--big {
+      color: $color-secondary;
+      font-size: 3rem;
+    }
+
+    &--small {
+      color: $color-secondary;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__body {
+    padding: $padding-body;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input-box {
+    width: 90%;
+  }
+
+  &__label {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  &__input {
+    border: none;
+    width: 100%;
+    padding: 1.5rem 0;
+    outline: none;
+    border-bottom: 1px solid rgba($color-rich-black, 0.25);
+    font-size: 1.8rem;
+    font-family: monospace;
+    letter-spacing: inherit;
+    line-height: inherit;
+
+    &:focus {
+      border-bottom: 1px solid $color-primary;
+    }
+  }
+}
+
+.to-do-list {
+  @include forAllBoxes();
+
+  &__header {
+    @include header();
+  }
+
+  &__body {
+    padding: $padding-body;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    font-size: 2rem;
+    border-bottom: 1px solid $color-primary;
+  }
+
+  &__text-box {
+    margin-right: auto;
+  }
+
+  &__icon-box {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 2.5rem;
+    }
+
+    &--header {
+      @include bigIconBox($color-primary);
+    }
+
+    &--body {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: rgba($color-primary, 0.25);
+      color: $color-secondary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 2rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  &__icon {
+    &--big {
+      color: $color-secondary;
+      font-size: 3rem;
+    }
+  }
+}
+
+.completed {
+  @include forAllBoxes();
+
+  &__header {
+    @include header();
+  }
+
+  &__body {
+    padding: $padding-body;
+  }
+
+  &__icon-box {
+    &--header {
+      @include bigIconBox($color-primary);
+    }
+
+    &--body {
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    &--big {
+      color: $color-secondary;
+      font-size: 3rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+
+    &--text {
+      margin-right: auto;
+    }
+  }
+}
+
+// ***************** Typography ************************************* //
+
+.heading-1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+
+.heading-2 {
+  text-transform: uppercase;
+  font-size: 2.25rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}

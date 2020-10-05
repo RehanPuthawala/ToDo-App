@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App With Module Pattern</title>
+
+    <!-- Link to Google Fonts  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Link to Javascript Files -->
+    <script defer src="resources/js/app.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="heading-1">To - Do App</h1>
+    </header>
+
+    <main class="main">
+      <div class="main__container">
+        <div class="addItem">
+          <div class="addItem__header">
+            <div class="addItem__icon-box--header">
+              <i
+                class="fa fa-thumb-tack addItem__icon--big"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h2 class="heading-2">Add Item</h2>
+          </div>
+          <div class="addItem__body">
+            <div class="addItem__input-box">
+              <label for="addItem__input" class="addItem__label"
+                >What do you want to do ?</label
+              >
+              <input type="text" class="addItem__input" id="addItem__input" />
+            </div>
+            <div class="addItem__icon-box--body">
+              <i class="fa fa-plus addItem__icon--small addItem__add-btn" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- To Do List Division  -->
+        <div class="to-do-list">
+          <div class="to-do-list__header">
+            <div class="to-do-list__icon-box--header">
+              <i
+                class="fa fa-tasks to-do-list__icon--big"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h2 class="heading-2">To-Do List</h2>
+          </div>
+          <div class="to-do-list__body">
+            <div class="to-do-list__item">
+              <div class="to-do-list__icon-box--body">
+                <i
+                  class="fa fa-check to-do-list__icon--medium"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div class="to-do-list__text-box">
+                <p class="to-do-list__item--text">
+                  I have to buy babies food and some groceries today.
+                </p>
+              </div>
+
+              <div class="to-do-list__icon-box">
+                <i
+                  class="fa fa-pencil to-do-list__icon--small to-do-list__icon--small--edit"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="to-do-list__icon-box">
+                <i
+                  class="fa fa-trash to-do-list__icon--small--delete"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
+
+            <div class="to-do-list__item">
+              <div class="to-do-list__icon-box--body">
+                <i
+                  class="fa fa-check to-do-list__icon--medium"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <div class="to-do-list__text-box">
+                <p class="to-do-list__item--text">
+                  I have to Complete the Project by next month
+                </p>
+              </div>
+              <div class="to-do-list__icon-box">
+                <i
+                  class="fa fa-pencil to-do-list__icon--small to-do-list__icon--small--edit"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="to-do-list__icon-box">
+                <i
+                  class="fa fa-trash to-do-list__icon--small--delete"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Completed Division -->
+        <div class="completed">
+          <div class="completed__header">
+            <div class="completed__icon-box--header">
+              <i
+                class="fa fa-check completed__icon--big"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h2 class="heading-2">Completed</h2>
+          </div>
+
+          <div class="completed__body">
+            <div class="completed__item">
+              <p class="completed__item--text">
+                Don't Forget to buy baby's food and fruits
+              </p>
+              <div class="completed__icon-box--body">
+                <i
+                  class="fa fa-trash completed__icon--small--delete"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!-- FontAwesome Icons  -->
+<!-- 
+<i class="fa fa-thumb-tack" aria-hidden="true"></i>
+<i class="fa fa-tasks" aria-hidden="true"></i>
+<i class="fa fa-check" aria-hidden="true"></i>
+<i class="fa fa-plus" aria-hidden="true"></i>
+<i class="fa fa-pencil" aria-hidden="true"></i> 
+<i class="fa fa-trash" aria-hidden="true"></i> 
+-->
