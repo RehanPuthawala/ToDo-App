@@ -42,6 +42,15 @@ $font-primary: "Poppins", sans-serif;
   padding-left: 10rem;
 }
 
+@mixin itemStyle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  font-size: 2rem;
+  border-bottom: 1px solid $color-primary;
+}
+
 // ***************** Base Reset  ************************************* //
 *,
 *::before,
@@ -178,16 +187,32 @@ body {
   }
 
   &__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding: 1rem 0;
-    font-size: 2rem;
-    border-bottom: 1px solid $color-primary;
+    @include itemStyle();
   }
 
   &__text-box {
+    flex-grow: 1;
     margin-right: auto;
+  }
+
+  &__input {
+    flex-grow: 1;
+    padding: 0.7rem;
+    font-size: 1.8rem;
+    font-weight: inherit;
+    font-family: inherit;
+    color: $color-primary;
+    margin-right: 1rem;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color-primary;
+    }
+
+    &::placeholder {
+      color: $color-primary;
+    }
   }
 
   &__icon-box {
@@ -213,6 +238,10 @@ body {
       cursor: pointer;
 
       &:hover {
+        background-color: $color-primary;
+      }
+
+      &--active {
         background-color: $color-primary;
       }
     }
@@ -255,10 +284,7 @@ body {
   }
 
   &__item {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-
+    @include itemStyle();
     &--text {
       margin-right: auto;
     }
